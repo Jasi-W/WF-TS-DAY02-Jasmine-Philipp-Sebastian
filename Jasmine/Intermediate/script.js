@@ -15,7 +15,25 @@ var Planet = /** @class */ (function () {
         this.name = name;
         this.period = OrbitPeriods[name];
     }
+    Planet.prototype.getPlanetYears = function (seconds) {
+        return this.name + ": " + (seconds / earthYearInSeconds) / this.period;
+    };
     return Planet;
 }());
+var earth = new Planet("Earth");
+var mercury = new Planet("Mercury");
 var venus = new Planet("Venus");
-console.log(venus.period);
+var mars = new Planet("Mars");
+var jupiter = new Planet("Jupiter");
+var saturn = new Planet("Saturn");
+var uranus = new Planet("Uranus");
+var neptune = new Planet("Neptune");
+var yearsInSeconds = 500000000;
+console.log(earth.getPlanetYears(yearsInSeconds));
+console.log(mercury.getPlanetYears(yearsInSeconds));
+console.log(venus.getPlanetYears(yearsInSeconds));
+console.log(mars.getPlanetYears(yearsInSeconds));
+console.log(jupiter.getPlanetYears(yearsInSeconds));
+console.log(saturn.getPlanetYears(yearsInSeconds));
+console.log(uranus.getPlanetYears(yearsInSeconds));
+console.log(neptune.getPlanetYears(yearsInSeconds));
